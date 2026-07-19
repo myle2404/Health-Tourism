@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprehensive Health Checks — VietMed Tour</title>
+<meta name="description" content="Choose from Standard, Premium, or Gold executive health screening packages. Same-day results, English-speaking specialists, accredited hospitals.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="quote.css">
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">
+    <div class="logo-icon"><i class="ti ti-heart-plus"></i></div>
+    VietMed Tour
+  </a>
+  <div class="nav-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#why-vietnam">Why Vietnam</a>
+    <a href="index.html#how-it-works">How it works</a>
+    <a href="index.html#testimonials">Testimonials</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <a class="nav-btn" href="index.html#contact">Free consultation</a>
+</nav>
+
+<div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#services">Services</a> &nbsp;/&nbsp; Health screening</div>
+
+<section class="pkg-hero">
+  <p class="pkg-eyebrow">Health Screening</p>
+  <h1>Comprehensive health checks</h1>
+  <p>Full executive health screenings completed in a single day — blood labs, imaging, ECG and specialist consultations. Choose the package that fits your needs.</p>
+</section>
+
+<section class="pkg-wrap">
+  <div class="pkg-tabs" id="pkg-tabs" role="tablist" aria-label="Health check packages"></div>
+
+  <article class="pkg-card">
+    <div class="pkg-card-grid">
+      <div class="pkg-left">
+        <h2 id="pkg-name"></h2>
+        <p class="pkg-tagline" id="pkg-tagline"></p>
+        <p class="pkg-desc" id="pkg-desc"></p>
+        <div class="pkg-price">
+          <span class="pkg-price-from">From</span>
+          <span class="pkg-price-num" id="pkg-price"></span>
+          <span class="pkg-price-unit">/ person</span>
+        </div>
+        <p class="pkg-duration" id="pkg-duration"></p>
+
+        <div class="pkg-included">
+          <h3>What's included</h3>
+          <ul id="pkg-included-list"></ul>
+          <button type="button" class="pkg-more" id="pkg-more-btn">More details <i class="ti ti-chevron-down"></i></button>
+          <ul class="pkg-more-list" id="pkg-more-list"></ul>
+        </div>
+      </div>
+
+      <div class="pkg-right">
+        <div class="pkg-addons">
+          <h3>Optional add-ons</h3>
+          <p class="pkg-addons-hint">Tap to add to your package.</p>
+          <ul id="pkg-addons-list"></ul>
+        </div>
+
+        <div class="pkg-breakdown">
+          <h3>Price breakdown</h3>
+          <div class="bd-row base"><span class="bd-name" id="bd-base-label"></span><span class="bd-amt" id="bd-base-amt"></span></div>
+          <div class="bd-addons" id="bd-addons"></div>
+          <div class="bd-total"><span class="bd-total-label">Total</span><span class="bd-total-amt" id="bd-total"></span></div>
+        </div>
+
+        <div class="pkg-form-box">
+          <div class="pkg-form-head">
+            <i class="ti ti-message-circle"></i>
+            <span class="pkg-form-title">Tell us about your situation</span>
+            <span class="pkg-form-optional">Optional</span>
+          </div>
+          <p class="pkg-form-hint">Share a few details and we'll tailor the package and add-ons to fit.</p>
+          <form id="pkg-form">
+            <div class="fg"><label>Full name *</label><input type="text" required placeholder="Jane Doe"></div>
+            <div class="frow">
+              <div class="fg"><label>Email *</label><input type="email" required placeholder="jane@example.com"></div>
+              <div class="fg"><label>Phone (optional)</label><input type="tel" placeholder="+1 (555) 000-0000"></div>
+            </div>
+            <div class="fg"><label>Country (optional)</label><input type="text" placeholder="United States"></div>
+            <div class="fg"><label>Your situation (optional)</label><textarea placeholder="e.g. I'm 45, family history of heart disease, and I'd like to focus on cardiovascular screening..."></textarea></div>
+            <button type="submit" class="submit-btn"><i class="ti ti-send"></i> Send to our care team</button>
+          </form>
+          <div class="form-success" id="form-success"><i class="ti ti-circle-check"></i> Thanks! Your request has been captured — our team will reach out within 24 hours.</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <p class="pkg-footnote">All procedures performed at accredited hospitals by English-speaking specialists. Results delivered in English the same day.</p>
+</section>
+
+<footer>
+  <a class="footer-logo" href="index.html">
+    <div class="logo-icon" style="width:32px;height:32px"><i class="ti ti-heart-plus" style="font-size:16px"></i></div>
+    VietMed Tour
+  </a>
+  <div class="footer-links">
+    <a href="#">Privacy policy</a>
+    <a href="#">Terms of service</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="#">FAQ</a>
+  </div>
+  <div class="footer-copy">© 2025 VietMed Tour. All rights reserved.</div>
+</footer>
+
+<script>
+window.PKG_DATA = {
+  tiers: [
+    {
+      name: "Standard",
+      tagline: "Essential annual checkup",
+      desc: "Core health screening covering the essentials — ideal for healthy adults seeking a yearly baseline.",
+      price: 199,
+      duration: "~3 hours · same-day results",
+      included: [
+        "General Practitioner",
+        "Vision and colour (nurse)",
+        "Resting ECG",
+        "Chest X-ray",
+        "Complete blood count",
+        "Body Composition Analysis - Inbody Screening"
+      ],
+      addons: [
+        { name: "Thyroid function panel", price: 60 },
+        { name: "Vitamin D & B12 screen", price: 45 },
+        { name: "Abdominal ultrasound", price: 90 }
+      ]
+    },
+    {
+      name: "Premium",
+      badge: "Most popular",
+      tagline: "In-depth executive screening",
+      desc: "Expanded diagnostics with imaging and specialist consultations — recommended for adults 40+ or anyone wanting deeper insight.",
+      price: 599,
+      duration: "~5 hours · same-day results",
+      included: [
+        "Everything in Standard",
+        "Abdominal ultrasound",
+        "Thyroid panel & hormone screen",
+        "Vitamin D, B12 & iron studies",
+        "Cardiology consultation",
+        "Stress test (treadmill ECG)",
+        "Lung function test",
+        "Eye & hearing screening"
+      ],
+      addons: [
+        { name: "Cardiac calcium score CT", price: 220 },
+        { name: "Full tumor marker panel", price: 180 },
+        { name: "Bone density (DEXA) scan", price: 130 },
+        { name: "Food intolerance panel", price: 160 }
+      ]
+    },
+    {
+      name: "Gold",
+      tagline: "Total preventive workup",
+      desc: "Our most comprehensive package, including advanced cancer screening and full-body imaging for complete peace of mind.",
+      price: 1199,
+      duration: "Full day · same-day results",
+      included: [
+        "Everything in Premium",
+        "Low-dose chest CT scan",
+        "Carotid & cardiac doppler",
+        "Full tumor marker panel",
+        "Colonoscopy or gastroscopy (optional)",
+        "Gynecology / urology consultation",
+        "Dermatology full-body skin check",
+        "Nutrition & lifestyle consultation",
+        "Personalized 12-month follow-up plan"
+      ],
+      more: [
+        "Advanced cardiac imaging review by cardiologist",
+        "Comprehensive cancer marker interpretation",
+        "Sleep quality & stress assessment",
+        "Bone density (DEXA) full-body scan",
+        "Priority scheduling & dedicated coordinator",
+        "Annual concierge follow-up calls"
+      ],
+      addons: [
+        { name: "Whole-body MRI scan", price: 950 },
+        { name: "Genetic cancer risk panel", price: 480 },
+        { name: "Advanced hormone & longevity panel", price: 340 },
+        { name: "VIP private suite & concierge", price: 250 }
+      ]
+    }
+  ]
+};
+</script>
+<script src="quote.js"></script>
+</body>
+</html>
