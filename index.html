@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VietMed Tour — Healthcare in Vietnam for Americans</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #0F6E56;
+      --teal-hover: #085041;
+      --teal-light: #E1F5EE;
+      --dark: #1a1a1a;
+      --gray: #5f6b7a;
+      --light: #f8f9f7;
+      --border: rgba(0,0,0,0.1);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--dark);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: #fff; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 52px; height: 70px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; color: var(--dark); text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .logo-icon i { color: #9FE1CB; font-size: 18px; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 14px; color: var(--gray); text-decoration: none; }
+    .nav-links a:hover { color: var(--dark); }
+    .nav-btn { font-size: 14px; font-weight: 500; color: #fff; background: var(--teal); padding: 10px 22px; border-radius: 6px; text-decoration: none; }
+    .nav-btn:hover { background: var(--teal-hover); }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 640px;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      background: #0a3d2b;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover; background-position: center;
+      opacity: 0.45;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; padding: 80px 24px; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 500; color: #9FE1CB;
+      border: 1px solid rgba(159,225,203,0.5);
+      padding: 6px 16px; border-radius: 30px; margin-bottom: 24px;
+    }
+    .hero h1 { font-size: 50px; font-weight: 700; line-height: 1.1; color: #fff; margin-bottom: 18px; }
+    .hero p { font-size: 18px; color: rgba(255,255,255,0.78); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-white { font-size: 15px; font-weight: 600; color: var(--dark); background: #fff; padding: 14px 30px; border-radius: 6px; text-decoration: none; }
+    .btn-white:hover { background: #f0f0f0; }
+    .btn-outline { font-size: 15px; font-weight: 500; color: #fff; background: transparent; border: 1px solid rgba(255,255,255,0.45); padding: 14px 30px; border-radius: 6px; text-decoration: none; }
+    .btn-outline:hover { background: rgba(255,255,255,0.08); }
+
+    /* STATS BAR */
+    .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--border); }
+    .stat-cell { padding: 30px 20px; text-align: center; border-right: 1px solid var(--border); }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num { font-size: 34px; font-weight: 700; color: var(--teal); }
+    .stat-label { font-size: 13px; color: var(--gray); margin-top: 4px; }
+
+    /* SECTION HEADER */
+    .sec-header { padding: 80px 52px 52px; text-align: center; }
+    .sec-tag { font-size: 12px; font-weight: 600; color: var(--teal); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .sec-title { font-size: 36px; font-weight: 700; color: var(--dark); margin-bottom: 14px; }
+    .sec-desc { font-size: 16px; color: var(--gray); max-width: 540px; margin: 0 auto; line-height: 1.7; }
+
+    /* SPLIT SECTIONS */
+    .split { display: grid; grid-template-columns: 1fr 1fr; min-height: 520px; border-top: 1px solid var(--border); }
+    .split-img { background: #d4e8de; overflow: hidden; }
+    .split-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .split-img:hover img { transform: scale(1.03); }
+    .split-body { padding: 72px 60px; display: flex; flex-direction: column; justify-content: center; }
+    .split-tag { font-size: 11px; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+    .split-title { font-size: 30px; font-weight: 700; margin-bottom: 16px; line-height: 1.25; }
+    .split-text { font-size: 15px; color: var(--gray); margin-bottom: 24px; line-height: 1.8; }
+    .split-price {
+      font-size: 13px; font-weight: 600; color: var(--teal);
+      background: var(--teal-light);
+      padding: 11px 18px; border-radius: 6px;
+      display: inline-flex; align-items: center; gap: 7px;
+      margin-bottom: 22px; align-self: flex-start;
+    }
+    .split-link { font-size: 14px; font-weight: 600; color: var(--teal); display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
+    .split-link:hover { color: var(--teal-hover); }
+
+    /* WHY VIETNAM */
+    .why-section { background: var(--light); padding: 80px 52px; border-top: 1px solid var(--border); }
+    .why-inner { max-width: 1100px; margin: 0 auto; }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 52px; }
+    .why-card { background: #fff; border-radius: 12px; padding: 32px; border: 1px solid var(--border); }
+    .why-icon { width: 46px; height: 46px; background: var(--teal-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--teal); font-size: 22px; }
+    .why-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .why-desc { font-size: 14px; color: var(--gray); line-height: 1.75; }
+
+    /* SAVINGS TABLE */
+    .savings-section { padding: 80px 52px; border-top: 1px solid var(--border); }
+    .savings-inner { max-width: 900px; margin: 0 auto; }
+    .savings-table { width: 100%; border-collapse: collapse; margin-top: 44px; }
+    .savings-table th { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray); padding: 14px 20px; text-align: left; border-bottom: 2px solid var(--border); }
+    .savings-table td { padding: 18px 20px; border-bottom: 1px solid var(--border); font-size: 15px; vertical-align: middle; }
+    .savings-table tr:hover td { background: var(--light); }
+    .us-price { color: #b03030; }
+    .vn-price { color: var(--teal); font-weight: 600; }
+    .saving-badge { font-size: 12px; font-weight: 700; color: #fff; background: var(--teal); padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
+
+    /* HOW IT WORKS */
+    .steps-section { background: var(--dark); padding: 80px 52px; }
+    .steps-inner { max-width: 1100px; margin: 0 auto; }
+    .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 56px; }
+    .step-card { text-align: center; }
+    .step-num { width: 52px; height: 52px; border-radius: 50%; background: var(--teal); color: #fff; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .step-card h3 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .step-card p { font-size: 13px; color: rgba(255,255,255,0.52); line-height: 1.65; }
+
+    /* TESTIMONIALS */
+    .testi-section { padding: 80px 52px; background: var(--light); border-top: 1px solid var(--border); }
+    .testi-inner { max-width: 1100px; margin: 0 auto; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 52px; }
+    .tcard { background: #fff; border-radius: 12px; padding: 30px; border: 1px solid var(--border); }
+    .tcard-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+    .avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #cde; }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tname { font-size: 15px; font-weight: 700; }
+    .tloc { font-size: 12px; color: var(--gray); margin-top: 2px; }
+    .stars { color: #e6a817; font-size: 14px; margin-bottom: 12px; letter-spacing: 1px; }
+    .tquote { font-size: 14px; color: #333; line-height: 1.75; font-style: italic; margin-bottom: 16px; }
+    .tsvc { font-size: 11px; font-weight: 600; color: var(--teal); background: var(--teal-light); padding: 4px 12px; border-radius: 20px; display: inline-block; }
+
+    /* PARTNER HOSPITALS */
+    .hospitals-section { padding: 52px; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .hospitals-label { font-size: 12px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 26px; font-weight: 600; }
+    .hosp-logos { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .hosp-pill { font-size: 13px; font-weight: 500; color: var(--gray); border: 1px solid var(--border); border-radius: 30px; padding: 11px 22px; display: flex; align-items: center; gap: 8px; }
+    .hosp-pill i { color: var(--teal); font-size: 17px; }
+
+    /* CONTACT */
+    .contact-section { padding: 80px 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; border-top: 1px solid var(--border); }
+    .contact-info .sec-tag, .contact-info .sec-title, .contact-info .sec-desc { text-align: left; }
+    .contact-info .sec-title { font-size: 32px; margin-bottom: 14px; }
+    .contact-info .sec-desc { font-size: 15px; margin: 0 0 32px; max-width: none; }
+    .contact-feat { display: flex; gap: 14px; margin-bottom: 18px; align-items: flex-start; }
+    .feat-icon { width: 38px; height: 38px; background: var(--teal-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--teal); font-size: 18px; margin-top: 2px; }
+    .feat-text h4 { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+    .feat-text p { font-size: 13px; color: var(--gray); }
+    .contact-form-box { background: var(--light); border-radius: 14px; padding: 40px; border: 1px solid var(--border); }
+    .contact-form-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 26px; }
+    .fg { margin-bottom: 16px; }
+    .fg label { display: block; font-size: 12px; font-weight: 600; color: var(--gray); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.3px; }
+    .fg input, .fg select, .fg textarea { width: 100%; font-size: 14px; padding: 12px 14px; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; background: #fff; color: var(--dark); font-family: inherit; }
+    .fg textarea { min-height: 96px; resize: vertical; }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(15,110,86,0.1); }
+    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .submit-btn { width: 100%; padding: 14px; font-size: 15px; font-weight: 700; color: #fff; background: var(--teal); border: none; border-radius: 8px; cursor: pointer; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 4px; }
+    .submit-btn:hover { background: var(--teal-hover); }
+
+    /* FOOTER */
+    footer { background: var(--dark); padding: 40px 52px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 15px; font-weight: 700; text-decoration: none; }
+    .footer-links { display: flex; gap: 22px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 32px; }
+      .hero p { font-size: 16px; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stat-cell:nth-child(2) { border-right: none; }
+      .split { grid-template-columns: 1fr; min-height: auto; }
+      .split-img { height: 300px; }
+      .split-body { padding: 44px 28px; }
+      .sec-header { padding: 56px 24px 40px; }
+      .sec-title { font-size: 28px; }
+      .why-grid, .testi-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-section { grid-template-columns: 1fr; padding: 56px 24px; gap: 40px; }
+      .savings-section, .why-section, .testi-section { padding: 56px 24px; }
+      .steps-section, .hospitals-section { padding: 56px 24px; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="logo" href="#">
+      <div class="logo-icon"><i class="ti ti-heart-plus"></i></div>
+      VietMed Tour
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why-vietnam">Why Vietnam</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-btn" href="#contact">Free consultation</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-tag">
+        <i class="ti ti-shield-check" style="font-size:13px"></i>
+        JCI-accredited partner hospitals
+      </div>
+      <h1>World-class healthcare in Vietnam</h1>
+      <p>Premium medical care for Americans — at 60–80% less than US costs.</p>
+      <div class="hero-btns">
+        <a class="btn-white" href="#contact">Book a free consultation</a>
+        <a class="btn-outline" href="#services">See our services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-cell"><div class="stat-num">70%</div><div class="stat-label">Average cost savings vs US</div></div>
+    <div class="stat-cell"><div class="stat-num">500+</div><div class="stat-label">US patients served</div></div>
+    <div class="stat-cell"><div class="stat-num">12+</div><div class="stat-label">Accredited partner hospitals</div></div>
+    <div class="stat-cell"><div class="stat-num">4.9★</div><div class="stat-label">Average patient rating</div></div>
+  </div>
+
+  <!-- SERVICES HEADER -->
+  <div class="sec-header" id="services">
+    <div class="sec-tag">Our services</div>
+    <div class="sec-title">Treatments we specialize in</div>
+    <div class="sec-desc">All procedures performed at accredited hospitals by English-speaking specialists with international training.</div>
+  </div>
+
+  <!-- SERVICE 1: HEALTH CHECK -->
+  <div class="split">
+    <div class="split-img">
+      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80" alt="Doctor consulting a patient" loading="lazy">
+    </div>
+    <div class="split-body">
+      <div class="split-tag">Health screening</div>
+      <div class="split-title">Comprehensive health checks</div>
+      <p class="split-text">Full executive health screenings completed in a single day — blood labs, chest X-ray, abdominal ultrasound, ECG, and specialist consultations. Results delivered in English the same day.</p>
+      <div class="split-price"><i class="ti ti-trending-down" style="font-size:15px"></i> From $299 — saves up to 75% vs US</div>
+      <a class="split-link" href="#contact">Get a free quote <i class="ti ti-arrow-right" style="font-size:15px"></i></a>
+    </div>
+  </div>
+
+  <!-- SERVICE 2: COSMETIC -->
+  <div class="split" style="direction:rtl">
+    <div class="split-img" style="direction:ltr">
+      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80" alt="Cosmetic surgery consultation" loading="lazy">
+    </div>
+    <div class="split-body" style="direction:ltr">
+      <div class="split-tag">Cosmetic surgery</div>
+      <div class="split-title">Look and feel your best</div>
+      <p class="split-text">Rhinoplasty, eyelid surgery, facelifts, liposuction, and breast augmentation — performed by surgeons with 10–20 years of experience, many trained in France, the US, and South Korea.</p>
+      <div class="split-price"><i class="ti ti-trending-down" style="font-size:15px"></i> From $1,200 — saves up to 60% vs US</div>
+      <a class="split-link" href="#contact">Get a free quote <i class="ti ti-arrow-right" style="font-size:15px"></i></a>
+    </div>
+  </div>
+
+  <!-- SERVICE 3: IVF -->
+  <div class="split">
+    <div class="split-img">
+      <img src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?auto=format&fit=crop&w=900&q=80" alt="Couple at a fertility clinic" loading="lazy">
+    </div>
+    <div class="split-body">
+      <div class="split-tag">IVF &amp; Fertility</div>
+      <div class="split-title">Start or grow your family</div>
+      <p class="split-text">Complete IVF cycles, egg freezing, sperm analysis, and preimplantation genetic testing — at Vietnam's leading fertility centers with comparable success rates to US clinics, at a fraction of the cost.</p>
+      <div class="split-price"><i class="ti ti-trending-down" style="font-size:15px"></i> From $3,500 — saves up to 65% vs US</div>
+      <a class="split-link" href="#contact">Get a free quote <i class="ti ti-arrow-right" style="font-size:15px"></i></a>
+    </div>
+  </div>
+
+  <!-- SERVICE 4: DENTAL -->
+  <div class="split" style="direction:rtl">
+    <div class="split-img" style="direction:ltr">
+      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80" alt="Dental care procedure" loading="lazy">
+    </div>
+    <div class="split-body" style="direction:ltr">
+      <div class="split-tag">Dental care</div>
+      <div class="split-title">Restore your smile</div>
+      <p class="split-text">Dental implants, porcelain veneers, crowns, bridges, and full-mouth restoration — performed by cosmetic dentists using the latest technology, delivering results that rival any US dental practice.</p>
+      <div class="split-price"><i class="ti ti-trending-down" style="font-size:15px"></i> From $400 — saves up to 80% vs US</div>
+      <a class="split-link" href="#contact">Get a free quote <i class="ti ti-arrow-right" style="font-size:15px"></i></a>
+    </div>
+  </div>
+
+  <!-- WHY VIETNAM -->
+  <section class="why-section" id="why-vietnam">
+    <div class="why-inner">
+      <div style="text-align:center">
+        <div class="sec-tag">Why Vietnam</div>
+        <div class="sec-title">Better care, far better value</div>
+        <div class="sec-desc">Vietnam has quietly become one of Asia's premier medical tourism destinations — world-class facilities at a fraction of Western prices.</div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><i class="ti ti-shield-check"></i></div>
+          <div class="why-title">Accredited hospitals</div>
+          <p class="why-desc">Our partner hospitals hold JCI, ISO, and Vietnamese MOH accreditations — the same standards applied to leading US hospitals.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="ti ti-language"></i></div>
+          <div class="why-title">English-speaking doctors</div>
+          <p class="why-desc">Specialists trained in the US, UK, Australia, and France. No language barriers, no communication gaps throughout your care.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="ti ti-package"></i></div>
+          <div class="why-title">All-inclusive packages</div>
+          <p class="why-desc">Airport pickup, hotel, hospital transfers, translation services, and aftercare — all coordinated seamlessly by our dedicated team.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="ti ti-beach"></i></div>
+          <div class="why-title">Recover in paradise</div>
+          <p class="why-desc">Combine treatment with leisure — world-renowned beaches, extraordinary cuisine, and rich culture while you recover comfortably.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="ti ti-microscope"></i></div>
+          <div class="why-title">Modern technology</div>
+          <p class="why-desc">State-of-the-art equipment — Vinmec, FV Hospital, and CarePlus invest heavily in the latest diagnostic and surgical technology.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><i class="ti ti-file-description"></i></div>
+          <div class="why-title">Full aftercare support</div>
+          <p class="why-desc">All medical records delivered in English. Telemedicine follow-up consultations with your specialist are included at no extra cost.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAVINGS TABLE -->
+  <section class="savings-section">
+    <div class="savings-inner">
+      <div style="text-align:center">
+        <div class="sec-tag">Cost comparison</div>
+        <div class="sec-title">See exactly how much you save</div>
+        <div class="sec-desc">Typical price ranges — your personalised quote may vary by procedure complexity and chosen hospital.</div>
+      </div>
+      <table class="savings-table">
+        <thead>
+          <tr>
+            <th>Procedure</th>
+            <th>US average cost</th>
+            <th>Vietnam (incl. trip)</th>
+            <th>Your savings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Executive health check</strong></td><td class="us-price">$1,500 – $3,000</td><td class="vn-price">$299 – $450</td><td><span class="saving-badge">up to 75% off</span></td></tr>
+          <tr><td><strong>Rhinoplasty</strong></td><td class="us-price">$8,000 – $15,000</td><td class="vn-price">$2,500 – $4,500</td><td><span class="saving-badge">up to 70% off</span></td></tr>
+          <tr><td><strong>IVF cycle (fresh transfer)</strong></td><td class="us-price">$15,000 – $20,000</td><td class="vn-price">$3,500 – $5,500</td><td><span class="saving-badge">up to 75% off</span></td></tr>
+          <tr><td><strong>Dental implant (single)</strong></td><td class="us-price">$3,500 – $6,000</td><td class="vn-price">$700 – $1,200</td><td><span class="saving-badge">up to 80% off</span></td></tr>
+          <tr><td><strong>Porcelain veneers (per tooth)</strong></td><td class="us-price">$1,000 – $2,500</td><td class="vn-price">$180 – $350</td><td><span class="saving-badge">up to 82% off</span></td></tr>
+          <tr><td><strong>Breast augmentation</strong></td><td class="us-price">$8,000 – $12,000</td><td class="vn-price">$2,800 – $4,500</td><td><span class="saving-badge">up to 68% off</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="steps-section" id="how-it-works">
+    <div class="steps-inner">
+      <div style="text-align:center">
+        <div class="sec-tag" style="color:#9FE1CB">How it works</div>
+        <div class="sec-title" style="color:#fff">Your journey in 5 simple steps</div>
+        <div class="sec-desc" style="color:rgba(255,255,255,0.55)">From first inquiry to returning home — we handle every detail.</div>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Free consultation</h3>
+          <p>Tell us your needs. We match you with the right hospital and specialist for your specific case.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Custom quote</h3>
+          <p>Receive a full cost breakdown — treatment, hotel, transport, and meals, all itemised.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>We plan everything</h3>
+          <p>Flights, visa, hospital bookings, hotel stays — all arranged by our experienced team.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Treatment in Vietnam</h3>
+          <p>Your personal coordinator accompanies you throughout every hospital appointment.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">5</div>
+          <h3>Return &amp; aftercare</h3>
+          <p>Full medical records in English sent home. Telemedicine follow-up consultations included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi-section" id="testimonials">
+    <div class="testi-inner">
+      <div style="text-align:center">
+        <div class="sec-tag">Testimonials</div>
+        <div class="sec-title">What our patients say</div>
+      </div>
+      <div class="testi-grid">
+        <div class="tcard">
+          <div class="tcard-head">
+            <div class="avatar">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Jennifer M.">
+            </div>
+            <div>
+              <div class="tname">Jennifer M.</div>
+              <div class="tloc">Los Angeles, CA</div>
+            </div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="tquote">"I saved over $18,000 on my IVF cycle compared to my US clinic. The hospital was spotless, the doctors spoke perfect English, and my coordinator was with me every single step."</p>
+          <span class="tsvc">IVF treatment</span>
+        </div>
+        <div class="tcard">
+          <div class="tcard-head">
+            <div class="avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Robert K.">
+            </div>
+            <div>
+              <div class="tname">Robert K.</div>
+              <div class="tloc">Houston, TX</div>
+            </div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="tquote">"My full executive health check — labs, MRI, cardiology, ultrasound — completed in one day for $350. In the US the same tests would have cost thousands and taken weeks to schedule."</p>
+          <span class="tsvc">Health screening</span>
+        </div>
+        <div class="tcard">
+          <div class="tcard-head">
+            <div class="avatar">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" alt="Ashley T.">
+            </div>
+            <div>
+              <div class="tname">Ashley T.</div>
+              <div class="tloc">New York, NY</div>
+            </div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="tquote">"My rhinoplasty results are absolutely incredible. The surgeon trained in France with 15 years of experience. VietMed handled everything — I just showed up and it was perfect from start to finish."</p>
+          <span class="tsvc">Cosmetic surgery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER HOSPITALS -->
+  <div class="hospitals-section">
+    <div class="hospitals-label">Our trusted partner hospitals</div>
+    <div class="hosp-logos">
+      <div class="hosp-pill"><i class="ti ti-building-hospital"></i> Vinmec International</div>
+      <div class="hosp-pill"><i class="ti ti-building-hospital"></i> FV Hospital</div>
+      <div class="hosp-pill"><i class="ti ti-building-hospital"></i> CarePlus Clinics</div>
+      <div class="hosp-pill"><i class="ti ti-building-hospital"></i> HCMC IVF Center</div>
+      <div class="hosp-pill"><i class="ti ti-building-hospital"></i> Thu Cuc Hospital</div>
+      <div class="hosp-pill"><i class="ti ti-building-hospital"></i> Columbia Asia</div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="contact-info">
+      <div class="sec-tag">Get started</div>
+      <div class="sec-title">Ready to plan your medical trip?</div>
+      <div class="sec-desc">Our patient coordinators are ready to help you plan the perfect medical trip to Vietnam. No obligation — just honest, expert advice.</div>
+      <div class="contact-feat">
+        <div class="feat-icon"><i class="ti ti-clock"></i></div>
+        <div class="feat-text"><h4>Response within 24 hours</h4><p>Our team responds to every inquiry, guaranteed.</p></div>
+      </div>
+      <div class="contact-feat">
+        <div class="feat-icon"><i class="ti ti-receipt"></i></div>
+        <div class="feat-text"><h4>Free detailed quote</h4><p>Full itemised cost breakdown with no hidden fees.</p></div>
+      </div>
+      <div class="contact-feat">
+        <div class="feat-icon"><i class="ti ti-phone"></i></div>
+        <div class="feat-text"><h4>US-based support line</h4><p>Speak directly with a coordinator before you commit to anything.</p></div>
+      </div>
+    </div>
+    <div class="contact-form-box">
+      <h3>Request a free consultation</h3>
+      <div class="frow">
+        <div class="fg"><label>First name</label><input type="text" placeholder="Jane"></div>
+        <div class="fg"><label>Last name</label><input type="text" placeholder="Doe"></div>
+      </div>
+      <div class="fg"><label>Email address</label><input type="email" placeholder="jane@example.com"></div>
+      <div class="fg"><label>Phone (optional)</label><input type="tel" placeholder="+1 (555) 000-0000"></div>
+      <div class="fg">
+        <label>I'm interested in</label>
+        <select>
+          <option>Health check / screening</option>
+          <option>Cosmetic surgery</option>
+          <option>IVF / fertility treatment</option>
+          <option>Dental care</option>
+          <option>Other / multiple services</option>
+        </select>
+      </div>
+      <div class="fg"><label>Tell us more (optional)</label><textarea placeholder="E.g. timeframe, specific procedure, budget, questions..."></textarea></div>
+      <button class="submit-btn">Send consultation request <i class="ti ti-arrow-right"></i></button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a class="footer-logo" href="#">
+      <div class="logo-icon" style="width:32px;height:32px"><i class="ti ti-heart-plus" style="font-size:16px"></i></div>
+      VietMed Tour
+    </a>
+    <div class="footer-links">
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms of service</a>
+      <a href="#">Contact</a>
+      <a href="#">FAQ</a>
+    </div>
+    <div class="footer-copy">© 2025 VietMed Tour. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
