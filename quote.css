@@ -77,7 +77,7 @@ footer { background: var(--dark); padding: 40px 52px; display: flex; justify-con
 .pkg-card-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; }
 .pkg-left h2 { font-size: 28px; font-weight: 700; }
 .pkg-tagline { margin-top: 4px; font-size: 14px; font-weight: 600; color: var(--teal); }
-.pkg-desc { margin-top: 18px; font-size: 15px; color: var(--gray); line-height: 1.75; }
+.pkg-desc { margin-top: 18px; font-size: 15px; color: var(--dark); line-height: 1.75; }
 .pkg-price { margin-top: 30px; display: flex; align-items: baseline; gap: 8px; }
 .pkg-price-from { font-size: 20px; font-weight: 600; color: var(--gray); }
 .pkg-price-num { font-size: 42px; font-weight: 700; letter-spacing: -0.01em; }
