@@ -86,13 +86,15 @@ footer { background: var(--dark); padding: 40px 52px; display: flex; justify-con
 
 .pkg-included { margin-top: 36px; }
 .pkg-included h3, .pkg-addons h3, .pkg-breakdown h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); }
-.pkg-included ul { margin-top: 16px; display: flex; flex-direction: column; gap: 11px; font-size: 14px; }
+.pkg-included ul { margin-top: 16px; font-size: 14px; }
 .pkg-included li { display: flex; align-items: flex-start; gap: 10px; }
+.pkg-included li:not(:last-child) { margin-bottom: 11px; }
 .pkg-included li i { color: var(--teal); font-size: 15px; margin-top: 3px; flex-shrink: 0; }
+#pkg-included-list { display: flex; flex-direction: column; }
 .pkg-more { margin-top: 12px; display: inline-flex; align-items: center; gap: 5px; background: none; border: none; font-family: inherit; font-size: 14px; font-weight: 600; color: var(--teal); cursor: pointer; padding: 0; }
 .pkg-more i { font-size: 15px; transition: transform 0.15s ease; }
 .pkg-more.open i { transform: rotate(180deg); }
-.pkg-more-list { display: none; margin-top: 14px; }
+.pkg-more-list { display: none; flex-direction: column; margin-top: 3px; }
 .pkg-more-list.show { display: flex; }
 
 .pkg-right { border-left: 1px solid var(--border); padding-left: 48px; }
