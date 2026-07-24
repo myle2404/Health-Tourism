@@ -20,6 +20,7 @@
     moreBtn: document.getElementById('pkg-more-btn'),
     moreList: document.getElementById('pkg-more-list'),
     addonsList: document.getElementById('pkg-addons-list'),
+    addonsNote: document.getElementById('pkg-addons-note'),
     bdBaseLabel: document.getElementById('bd-base-label'),
     bdBaseAmt: document.getElementById('bd-base-amt'),
     bdAddons: document.getElementById('bd-addons'),
@@ -89,6 +90,12 @@
 
   function renderAddons() {
     var tier = currentTier();
+    if (tier.addonsNote) {
+      els.addonsNote.textContent = tier.addonsNote;
+      els.addonsNote.style.display = 'block';
+    } else {
+      els.addonsNote.style.display = 'none';
+    }
     els.addonsList.innerHTML = '';
     tier.addons.forEach(function (addon, i) {
       var selected = state.selectedAddons.has(i);
@@ -99,7 +106,9 @@
       btn.setAttribute('aria-pressed', selected ? 'true' : 'false');
       btn.innerHTML =
         '<span class="addon-left"><span class="addon-dot">' + (selected ? '✓' : '+') + '</span>' +
-        '<span class="addon-name">' + addon.name + '</span></span>' +
+        '<span class="addon-text"><span class="addon-name">' + addon.name + '</span>' +
+        (addon.desc ? '<span class="addon-desc">' + addon.desc + '</span>' : '') +
+        '</span></span>' +
         '<span class="addon-price">+' + money(addon.price) + '</span>';
       btn.addEventListener('click', function () {
         if (state.selectedAddons.has(i)) state.selectedAddons.delete(i);
