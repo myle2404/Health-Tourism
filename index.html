@@ -44,29 +44,30 @@
     /* HERO */
     .hero {
       position: relative; min-height: 640px;
-      display: flex; align-items: center; justify-content: center; text-align: center;
-      background: #0a3d2b;
+      display: flex; align-items: center; justify-content: flex-start; text-align: left;
+      background: #f4f6f5;
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover; background-position: center;
-      opacity: 0.45;
+      background-image: url('assets/hero-vietnam-medical.png');
+      background-size: cover; background-position: left center;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 700px; padding: 80px 24px; }
+    .hero-content { position: relative; z-index: 1; max-width: 560px; padding: 80px 52px; }
     .hero-tag {
       display: inline-flex; align-items: center; gap: 6px;
-      font-size: 12px; font-weight: 500; color: #9FE1CB;
-      border: 1px solid rgba(159,225,203,0.5);
+      font-size: 12px; font-weight: 600; color: var(--teal);
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(15,110,86,0.3);
       padding: 6px 16px; border-radius: 30px; margin-bottom: 24px;
     }
-    .hero h1 { font-size: 50px; font-weight: 700; line-height: 1.1; color: #fff; margin-bottom: 18px; }
-    .hero p { font-size: 18px; color: rgba(255,255,255,0.78); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
-    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn-white { font-size: 15px; font-weight: 600; color: var(--dark); background: #fff; padding: 14px 30px; border-radius: 6px; text-decoration: none; }
-    .btn-white:hover { background: #f0f0f0; }
-    .btn-outline { font-size: 15px; font-weight: 500; color: #fff; background: transparent; border: 1px solid rgba(255,255,255,0.45); padding: 14px 30px; border-radius: 6px; text-decoration: none; }
-    .btn-outline:hover { background: rgba(255,255,255,0.08); }
+    .hero h1 { font-size: 46px; font-weight: 700; line-height: 1.15; color: var(--dark); margin-bottom: 18px; }
+    .hero h1 em { color: var(--teal); font-style: normal; }
+    .hero p { font-size: 17px; color: var(--gray); margin-bottom: 36px; max-width: 460px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-white { font-size: 15px; font-weight: 600; color: #fff; background: var(--teal); padding: 14px 30px; border-radius: 6px; text-decoration: none; }
+    .btn-white:hover { background: var(--teal-hover); }
+    .btn-outline { font-size: 15px; font-weight: 500; color: var(--dark); background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.2); padding: 14px 30px; border-radius: 6px; text-decoration: none; }
+    .btn-outline:hover { background: #fff; }
 
     /* STATS BAR */
     .stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--border); }
@@ -226,8 +227,8 @@
         <i class="ti ti-shield-check" style="font-size:13px"></i>
         JCI-accredited partner hospitals
       </div>
-      <h1>World-class healthcare in Vietnam</h1>
-      <p>Premium medical care for Americans — at 60–80% less than US costs.</p>
+      <h1>World-Class Healthcare,<br><em>Unforgettable Vietnam</em></h1>
+      <p>Premium medical care and leisure for international patients — at 60–90% less than your hometown costs.</p>
       <div class="hero-btns">
         <a class="btn-white" href="#contact">Book a free consultation</a>
         <a class="btn-outline" href="#services">See our services</a>
