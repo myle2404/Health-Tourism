@@ -99,8 +99,7 @@ footer { background: var(--dark); padding: 40px 52px; display: flex; justify-con
 
 .pkg-right { border-left: 1px solid var(--border); padding-left: 48px; }
 .pkg-addons-hint { margin-top: 3px; font-size: 12px; color: var(--gray); }
-.pkg-addons-note { display: none; margin-top: 8px; font-size: 12px; color: var(--gray); font-style: italic; line-height: 1.6; }
-.pkg-addons-footnote { margin-top: 14px; font-size: 12px; color: var(--gray); font-style: italic; line-height: 1.6; }
+.pkg-addons-footnote { display: none; margin-top: 14px; font-size: 12px; color: var(--gray); font-style: italic; line-height: 1.6; }
 .pkg-addons ul { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
 .addon-btn {
   width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
