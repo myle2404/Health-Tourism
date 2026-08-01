@@ -182,9 +182,15 @@ footer { background: var(--dark); padding: 40px 52px; display: flex; justify-con
 }
 .price-section-head h2 { font-size: 20px; font-weight: 700; color: var(--dark); }
 .price-table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; }
-.savings-table.price-table { margin-top: 0; min-width: 620px; }
+.savings-table.price-table { margin-top: 0; min-width: 760px; }
 .savings-table.price-table th, .savings-table.price-table td { padding: 14px 18px; }
 .savings-table.price-table th:first-child, .savings-table.price-table td:first-child { padding-left: 20px; }
+.savings-table.price-table thead tr { background: var(--teal); }
+.savings-table.price-table th { color: rgba(255,255,255,0.85); border-bottom: none; white-space: nowrap; }
+.savings-table.price-table tbody tr:nth-child(even) td { background: var(--light); }
+.savings-table.price-table tbody tr:hover td { background: var(--teal-light); }
+.savings-table.price-table td:first-child { font-weight: 600; }
+.proc-desc { color: var(--gray); font-size: 13px; font-weight: 400; }
 
 .cta-band { background: var(--teal-light); border-radius: 16px; padding: 40px; margin-bottom: 56px; }
 .cta-band-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
