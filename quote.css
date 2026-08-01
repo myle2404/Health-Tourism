@@ -171,3 +171,27 @@ footer { background: var(--dark); padding: 40px 52px; display: flex; justify-con
 @media (max-width: 480px) {
   .frow { grid-template-columns: 1fr; }
 }
+
+/* PRICE TABLES (cost-guide style pages) */
+.price-wrap { max-width: 980px; margin: 0 auto; padding: 8px 24px 40px; }
+.price-section { margin-bottom: 52px; }
+.price-section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.price-section-icon {
+  width: 40px; height: 40px; border-radius: 10px; background: var(--teal-light); color: var(--teal);
+  display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+}
+.price-section-head h2 { font-size: 20px; font-weight: 700; color: var(--dark); }
+.price-table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; }
+.savings-table.price-table { margin-top: 0; min-width: 620px; }
+.savings-table.price-table th, .savings-table.price-table td { padding: 14px 18px; }
+.savings-table.price-table th:first-child, .savings-table.price-table td:first-child { padding-left: 20px; }
+
+.cta-band { background: var(--teal-light); border-radius: 16px; padding: 40px; margin-bottom: 56px; }
+.cta-band-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
+.cta-band h3 { font-size: 22px; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+.cta-band p { font-size: 14.5px; color: var(--gray); line-height: 1.75; }
+
+@media (max-width: 860px) {
+  .cta-band-inner { grid-template-columns: 1fr; }
+  .cta-band { padding: 28px 22px; }
+}
