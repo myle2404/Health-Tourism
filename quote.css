@@ -201,7 +201,7 @@ p.price-disclaimer {
 .proc-desc { color: var(--gray); font-size: 13px; font-weight: 400; }
 
 .cta-band { background: var(--teal-light); border-radius: 20px; padding: 56px; margin-bottom: 56px; }
-.cta-band-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+.cta-band-inner { display: grid; grid-template-columns: 0.9fr 1.15fr; gap: 48px; align-items: center; }
 .cta-band h3 { font-size: 24px; font-weight: 800; color: var(--teal); letter-spacing: -0.01em; margin-bottom: 14px; white-space: nowrap; }
 .cta-band p { font-size: 15.5px; color: var(--gray); line-height: 1.75; max-width: 440px; }
 
