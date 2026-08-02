@@ -200,12 +200,24 @@ p.price-disclaimer {
 .savings-table.price-table td:last-child { white-space: nowrap; }
 .proc-desc { color: var(--gray); font-size: 13px; font-weight: 400; }
 
-.cta-band { background: var(--teal-light); border-radius: 16px; padding: 40px; margin-bottom: 56px; }
-.cta-band-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: start; }
-.cta-band h3 { font-size: 22px; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
-.cta-band p { font-size: 14.5px; color: var(--gray); line-height: 1.75; }
+.cta-band { background: var(--teal-light); border-radius: 20px; padding: 56px; margin-bottom: 56px; }
+.cta-band-inner { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; }
+.cta-band h3 { font-size: 32px; font-weight: 800; color: var(--teal); letter-spacing: -0.01em; margin-bottom: 14px; }
+.cta-band p { font-size: 15.5px; color: var(--gray); line-height: 1.75; max-width: 440px; }
+
+/* White floating form card, matching the reference quote-form design */
+.cta-band .pkg-form-box { background: #fff; border: 1px solid rgba(15,110,86,0.18); border-radius: 20px; padding: 32px 36px; box-shadow: 0 24px 48px rgba(15,45,38,0.08); }
+.cta-band .pkg-form-head i { font-size: 18px; }
+.cta-band .pkg-form-title { font-size: 17px; }
+.cta-band .pkg-form-optional { background: var(--light); }
+.cta-band .pkg-form-hint { font-size: 13px; margin-top: 8px; }
+.cta-band .fg label { text-transform: none; letter-spacing: normal; font-size: 13.5px; font-weight: 600; color: var(--dark); }
+.cta-band .fg label .req { color: #d64545; }
+.cta-band .fg input, .cta-band .fg textarea { border-radius: 10px; padding: 12px 14px; font-size: 14.5px; }
+.cta-band .submit-btn { border-radius: 10px; padding: 14px; font-size: 15px; margin-top: 6px; }
 
 @media (max-width: 860px) {
   .cta-band-inner { grid-template-columns: 1fr; }
-  .cta-band { padding: 28px 22px; }
+  .cta-band { padding: 32px 22px; }
+  .cta-band .pkg-form-box { padding: 26px 24px; }
 }
