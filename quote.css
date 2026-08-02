@@ -55,8 +55,11 @@ footer { background: var(--dark); padding: 40px 52px; display: flex; justify-con
 .pkg-hero h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.01em; margin-top: 14px; }
 .pkg-hero p { margin-top: 16px; font-size: 16px; color: var(--gray); line-height: 1.7; }
 p.price-disclaimer {
-  margin-top: 14px; font-size: 11px; color: var(--gray); font-style: italic;
+  margin-top: 14px; font-size: 10.5px; color: var(--gray); font-style: italic;
+  white-space: nowrap; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin;
 }
+p.price-disclaimer::-webkit-scrollbar { height: 3px; }
+p.price-disclaimer::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 3px; }
 
 /* TABS */
 .pkg-wrap { max-width: 1180px; margin: 0 auto; padding: 8px 24px 80px; }
@@ -137,7 +140,7 @@ p.price-disclaimer {
 
 /* FORM */
 .pkg-form-box { margin-top: 28px; border: 1px solid rgba(15,110,86,0.25); background: var(--teal-light); border-radius: 12px; padding: 22px; }
-.pkg-form-head { display: flex; align-items: center; gap: 8px; }
+.pkg-form-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; row-gap: 6px; }
 .pkg-form-head i { color: var(--teal); font-size: 16px; }
 .pkg-form-title { font-size: 14px; font-weight: 700; }
 .pkg-form-optional { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray); background: #fff; padding: 2px 8px; border-radius: 20px; }
@@ -201,14 +204,14 @@ p.price-disclaimer {
 .proc-desc { color: var(--gray); font-size: 13px; font-weight: 400; }
 
 .cta-band { background: var(--teal-light); border-radius: 20px; padding: 56px; margin-bottom: 56px; }
-.cta-band-inner { display: grid; grid-template-columns: 0.9fr 1.15fr; gap: 48px; align-items: center; }
+.cta-band-inner { display: grid; grid-template-columns: 0.78fr 1.22fr; gap: 40px; align-items: center; }
 .cta-band h3 { font-size: 24px; font-weight: 800; color: var(--teal); letter-spacing: -0.01em; margin-bottom: 14px; white-space: nowrap; }
 .cta-band p { font-size: 15.5px; color: var(--gray); line-height: 1.75; max-width: 440px; }
 
 /* White floating form card, matching the reference quote-form design */
 .cta-band .pkg-form-box { background: #fff; border: 1px solid rgba(15,110,86,0.18); border-radius: 20px; padding: 32px 36px; box-shadow: 0 24px 48px rgba(15,45,38,0.08); }
-.cta-band .pkg-form-head i { font-size: 18px; }
-.cta-band .pkg-form-title { font-size: 17px; }
+.cta-band .pkg-form-head i { font-size: 18px; flex-shrink: 0; }
+.cta-band .pkg-form-title { font-size: 17px; white-space: nowrap; }
 .cta-band .pkg-form-optional { background: var(--light); }
 .cta-band .pkg-form-hint { font-size: 13px; margin-top: 8px; }
 .cta-band .fg label { text-transform: none; letter-spacing: normal; font-size: 13.5px; font-weight: 600; color: var(--dark); }
@@ -218,6 +221,6 @@ p.price-disclaimer {
 
 @media (max-width: 860px) {
   .cta-band-inner { grid-template-columns: 1fr; }
-  .cta-band { padding: 32px 22px; }
-  .cta-band .pkg-form-box { padding: 26px 24px; }
+  .cta-band { padding: 28px 16px; }
+  .cta-band .pkg-form-box { padding: 22px 18px; }
 }
