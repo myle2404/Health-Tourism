@@ -54,8 +54,8 @@ footer { background: var(--dark); padding: 40px 52px; display: flex; justify-con
 .pkg-eyebrow { font-size: 15px; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.15em; }
 .pkg-hero h1 { font-size: 32px; font-weight: 700; letter-spacing: -0.01em; margin-top: 14px; }
 .pkg-hero p { margin-top: 16px; font-size: 16px; color: var(--gray); line-height: 1.7; }
-.price-disclaimer {
-  margin-top: 14px; font-size: 12.5px; color: var(--gray); font-style: italic;
+p.price-disclaimer {
+  margin-top: 14px; font-size: 11px; color: var(--gray); font-style: italic;
 }
 
 /* TABS */
