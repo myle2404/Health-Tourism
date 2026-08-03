@@ -202,6 +202,7 @@ p.price-disclaimer::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); bord
 .savings-table.price-table td:first-child { font-weight: 600; }
 .savings-table.price-table td:last-child { white-space: nowrap; }
 .proc-desc { color: var(--gray); font-size: 13px; font-weight: 400; }
+.nowrap { white-space: nowrap; }
 
 .cta-band { background: var(--teal-light); border-radius: 20px; padding: 56px; margin-bottom: 56px; }
 .cta-band-inner { display: grid; grid-template-columns: 0.78fr 1.22fr; gap: 40px; align-items: center; }
