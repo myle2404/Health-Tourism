@@ -271,3 +271,25 @@ p.price-disclaimer::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); bord
   .timeline { margin-left: 6px; padding-left: 26px; }
   .timeline-num { left: -40px; width: 28px; height: 28px; font-size: 13px; }
 }
+
+/* FAQ ACCORDION (shared with index.html) */
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: none; border: none; text-align: left; font-family: inherit; font-size: 15px; font-weight: 600; color: var(--dark); cursor: pointer; }
+.faq-q i { font-size: 18px; color: var(--teal); flex-shrink: 0; transition: transform 0.2s ease; }
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.25s ease; }
+.faq-item.open .faq-a { max-height: 500px; }
+.faq-a p { padding: 0 24px 20px; font-size: 14px; color: var(--gray); line-height: 1.75; }
+.faq-category { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal); margin: 44px 0 16px; }
+.faq-category:first-child { margin-top: 0; }
+
+/* LEGAL / STATIC CONTENT PAGES */
+.legal-content { max-width: 780px; margin: 0 auto; padding: 8px 24px 80px; }
+.legal-content .updated { font-size: 13px; color: var(--gray); font-style: italic; margin-bottom: 40px; }
+.legal-content h2 { font-size: 20px; font-weight: 700; margin: 40px 0 14px; }
+.legal-content h2:first-of-type { margin-top: 0; }
+.legal-content p { font-size: 15px; color: var(--dark); line-height: 1.8; margin-bottom: 14px; }
+.legal-content ul { margin: 0 0 14px; padding-left: 22px; }
+.legal-content li { font-size: 15px; color: var(--dark); line-height: 1.8; list-style: disc; margin-bottom: 6px; }
+.legal-content a { color: var(--teal); }
